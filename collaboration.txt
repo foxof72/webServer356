@@ -1,0 +1,20 @@
+John Williams
+Collaboration Log
+
+Stack Overflow
+2/8/16
+Read about parsing strings.
+http://stackoverflow.com/questions/5749195/how-can-i-split-and-parse-a-string-in-python
+
+
+Python Documentation
+2/8/16
+Read time API
+https://docs.python.org/2/library/time.html
+
+
+Python Documentation
+2/8/16
+Read about enums
+https://docs.python.org/3/library/enum.html
+

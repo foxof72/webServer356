@@ -3,13 +3,14 @@
 
 import socket
 import sys
+import time
 
 # This creates a socket, binds it, and initiates listening
-def socketCreator(port, address):
+def socketCreator(address, port):
     print "Creating socket 'monitor'"
     monitor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     targetAddress = (address, port)
-    print "Starting up address %s port number %d" % address, port
+    print "Starting up on %s at port %s" % targetAddress
     print "Attempting bind..."
     monitor.bind(targetAddress)
     print "Successful Bind"
@@ -28,6 +29,10 @@ def listener(theSocket):
                 print "Received incoming data: ", incoming
                 if incoming:
                     print "here's where what walsh wants will go"
+
+                    if incoming is "GET /hello HTTP/1.1":
+                        currentTime = time.time()
+                        print "Connection initiated at ", currentTime
                 else:
                     print "all data handled"
                     break
@@ -38,7 +43,7 @@ def listener(theSocket):
             break
 
 #main
-port = sys.argv[0]
-address = sys.argv[1]
+port = sys.argv[1]
+address = sys.argv[2]
 sock = socketCreator(port, address)
 listener(sock)
