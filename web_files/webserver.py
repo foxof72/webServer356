@@ -5,7 +5,7 @@ import socket
 import sys
 
 # This creates a socket, binds it, and initiates listening
-def socketCreator (port, address):
+def socketCreator(port, address):
     print "Creating socket 'monitor'"
     monitor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     targetAddress = (address, port)
@@ -16,5 +16,29 @@ def socketCreator (port, address):
     return monitor
 
 
-def listener (socket):
+def listener(theSocket):
+    theSocket.listen(1)
     while True:
+        print "Listening..."
+        connection, clientAddress = theSocket.accept(1)
+        try:
+            print "Successful connection to %s" % clientAddress
+            while True:
+                incoming = connection.recieve(16)
+                print "Received incoming data: ", incoming
+                if incoming:
+                    print "here's where what walsh wants will go"
+                else:
+                    print "all data handled"
+                    break
+
+        finally:
+            connection.close()
+            print "connection to ", clientAddress, "killed"
+            break
+
+#main
+port = sys.argv[0]
+address = sys.argv[1]
+sock = socketCreator(port, address)
+listener(sock)
