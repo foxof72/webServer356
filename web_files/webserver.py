@@ -9,7 +9,7 @@ import time
 def socketCreator(address, port):
     print "Creating socket 'monitor'"
     monitor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    targetAddress = (address, port)
+    targetAddress = ('localhost', 8080)
     print "Starting up on %s at port %s" % targetAddress
     print "Attempting bind..."
     monitor.bind(targetAddress)
@@ -21,7 +21,7 @@ def listener(theSocket):
     theSocket.listen(1)
     while True:
         print "Listening..."
-        connection, clientAddress = theSocket.accept(1)
+        connection, clientAddress = theSocket.accept()
         try:
             print "Successful connection to %s" % clientAddress
             while True:
