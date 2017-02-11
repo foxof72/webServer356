@@ -2,19 +2,32 @@ John Williams
 Collaboration Log
 
 Stack Overflow
-2/8/16
+2/8/17
 Read about parsing strings.
 http://stackoverflow.com/questions/5749195/how-can-i-split-and-parse-a-string-in-python
 
 
 Python Documentation
-2/8/16
+2/8/17
 Read time API
 https://docs.python.org/2/library/time.html
 
 
 Python Documentation
-2/8/16
+2/8/17
 Read about enums
 https://docs.python.org/3/library/enum.html
+
+Stack Overflow
+2/11/17
+Read about finding substrings in a string
+http://stackoverflow.com/questions/5188792/how-to-check-a-string-for-specific-characters
+
+pythonforbeginners.com
+2/11/17
+Read about using the split function
+http://www.pythonforbeginners.com/dictionary/python-split
+
+
+
 
